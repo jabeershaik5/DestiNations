@@ -1,0 +1,240 @@
+@import '../abstracts/variables';
+@import '../abstracts/mixins';
+
+//card-version-1
+.card-v1{
+    height:25rem;
+    min-width:18rem;
+    background-color: rgba($color: white, $alpha: .8);
+    margin:0rem 5rem;
+    padding:1rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    transition:transform 0.2s ease-out;
+    cursor: pointer;
+    @include responsive(1100){
+        margin:0rem 3rem;
+    }
+    @include responsive(900){
+        margin:1.5rem 5rem;
+        min-width:22rem;
+        max-width:25rem;
+    }
+    @include responsive(450){
+        margin:1.5rem 2rem;
+    }
+
+    &:hover{
+        transform:translateY(-10px);
+    }
+
+    &__icon-svg{
+        color:$base-theme-green-medium;
+        height:7rem;
+        width:8rem;
+    }
+    &__content{
+        &-title{
+            font-size: 1.5rem;
+            font-weight:600;
+            color:$base-theme-gray-medium;
+            margin-bottom: 1rem;
+        }
+        &-text{
+            font-size: $font-small;
+            color:$base-theme-gray-dark;
+        }
+    }
+}
+
+//card-vesion-2
+.card-v2{
+    perspective: 1000px;
+    position: relative;
+
+    &__card{
+        height:40rem;
+        min-width:25rem;
+        backface-visibility: hidden;
+        transition:all 0.8s ease-out;
+        border-radius: 10px;
+        cursor: pointer;
+        box-shadow: 0px 8px 20px 1px gray;
+        overflow: hidden;
+
+        @include responsive(800){
+            min-width:30rem;
+            max-width:35rem;
+            margin:2rem 0;
+        }
+        @include responsive(680){
+            min-width:27rem;
+            max-width: 30rem;
+        }
+        @include responsive(450){
+            min-width: 30rem;
+        }
+
+    }
+    &__front{
+        &-image{
+            height:45%;
+            width:100%;
+            overflow: hidden;
+            position:relative;
+            background-blend-mode: screen;
+            background-size: cover;
+            background-position: center;
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 95%);
+
+            &-title{
+                position: absolute;
+                bottom:20%;
+                right:0;
+                font-size: $font-medium;
+                font-weight: 700;
+                text-transform: uppercase;
+                width:auto;
+                color:white;
+            }
+
+            &-1{
+                background-position: left;
+                background-image:linear-gradient(to left, rgb(20, 130, 241), rgb(42, 97, 237) 80%), url('../../assets/images/henri-picot--X5FNFdq7Uw-unsplash.jpg');
+            }
+            &-2{
+                background-image: linear-gradient(to left, rgb(236, 149, 18), rgb(240, 157, 4) 80%),  url('../../assets/images/artists-eyes--DqzENPYLSE-unsplash.jpg');
+            }
+            &-3{
+                background-image: linear-gradient(to left, rgb(201, 34, 234), rgb(185, 64, 233) 80%),  url('../../assets/images/dylan-sauerwein-jCGIouCoYVg-unsplash.jpg');
+            }
+            
+            
+        }
+        &
+        &-details{
+            padding:2rem 2.5rem;
+            li{
+                font-size: $font-small;
+                margin:1rem 0;
+                padding-top:0.5rem;
+                padding-bottom:0.3rem;
+            }
+            & li:not(:last-child){
+                border-bottom: 1px solid black;
+            }
+        }
+
+        &__title-1{
+            background-color: rgb(64, 112, 233);
+            padding:0 1rem;
+        }
+        &__title-2{
+            background-color: rgb(240, 157, 4);
+            padding:0 1rem;
+        }
+        &__title-3{
+            background-color: rgb(185, 64, 233);
+            padding:0 1rem;
+        }
+
+    }
+    &__back{
+        position: absolute;
+        top:0;
+        right:0;
+        transform:rotateY(-180deg);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+    &__only-title{
+        font-size: $font-medium;
+        color:white;
+    }
+    &__price{
+        font-size: $font-large;
+        color:white;
+    }
+
+
+    &__1-back{
+        background-image: linear-gradient(to left, rgb(34, 134, 234), rgb(64, 112, 233) 80%);
+    }
+    &__2-back{
+        background-image: linear-gradient(to left, rgb(236, 149, 18), rgb(240, 157, 4) 80%);
+    }
+    &__3-back{
+        background-image: linear-gradient(to bottom, rgb(201, 34, 234), rgb(185, 64, 233) 80%);
+    }
+    &:hover &__front{
+        transform: rotateY(180deg);
+    }
+    &:hover &__back{
+        transform: rotateY(0);
+    }
+    &__btn{
+        margin:2rem;
+        margin-top:5rem;
+        background-color: $base-theme-green-medium !important;
+        color:white !important;
+    }
+}
+
+.story-card{
+    min-height:20rem;
+    max-height:24rem;
+    width:70%;
+    background-color: transparent;
+    transform:skewX(-10deg);
+    box-shadow: 0px 8px 20px 1px gray;
+    margin:4rem 0;
+    padding:4.5rem;
+
+    @include responsive(900){
+        width:80%;
+        padding:1.2rem;
+    }
+    
+    @include responsive(450){
+        transform: skewX(0deg);
+        padding:2rem;
+        max-height:26rem;
+    }
+
+    & > * {
+        transform: skewX(10deg);
+
+        @include responsive(450){
+            transform: skewX(0deg);
+        }
+    }
+
+    &__profile{
+        height:9rem;
+        width:9rem;
+        border-radius:50%;
+        margin:1rem;
+        margin-right:3rem;
+        float:left;
+        overflow: hidden;
+        object-fit:cover;
+        shape-outside: circle(50% at 50% 50%);
+        cursor: pointer;
+
+        img{
+            width:100%;
+            height:100%;
+        }         
+    }
+    &__review{
+        font-size: 1.4rem;
+        @include responsive(900){
+            margin-top: 1.5rem;
+        }
+    }
+}

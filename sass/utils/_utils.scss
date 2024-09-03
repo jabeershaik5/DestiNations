@@ -1,0 +1,24 @@
+@import '../abstracts/variables';
+@import '../abstracts/mixins';
+
+.heading_small{
+    font-size: 1.8rem;
+    font-weight: 600;
+    color:$base-theme-gray-dark;
+}
+
+.text-medium{
+    font-size: 1.5rem;
+}
+
+.title-large{
+    font-size: 2.8rem;
+    font-weight: 600;
+    transform:skewX(-15deg);
+    text-transform: uppercase;
+    background-image: linear-gradient(to right, $base-theme-green-light, $base-theme-green-dark 20%);
+
+    @include content-bg-color-clipper;
+    
+    padding:2rem;
+}

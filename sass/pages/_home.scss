@@ -1,0 +1,416 @@
+@import '../abstracts/variables';
+@import '../abstracts/mixins';
+
+@keyframes slidein-right{
+    0%{
+        transform: translateX(5rem);
+    }
+    90%{
+        transform:translateX(-1rem)
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
+@keyframes slidein-left{
+    0%{
+        transform: translateX(-5rem);
+    }
+    90%{
+        transform:translateX(1rem)
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
+
+
+.header{
+    height: calc(100vh - 2rem);
+    min-height: calc(100vh - 2rem);
+    width: 100%;
+    background-image: linear-gradient(to right, rgba($base-theme-green-light, .8), rgba($base-theme-green-dark, .8)), url('../assets/images/cristina-gottardi-1TKzF9oDGj8-unsplash.jpg');
+    background-size: cover;
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+    position:relative;
+    
+    
+
+    &__content-wrapper{
+        height:100%;
+        width:100%;
+        display: flex;
+        @include center;
+        flex-direction: column;
+        text-align: center;
+        color:white;
+        text-transform: uppercase;
+        letter-spacing: 1.1rem;
+        padding-bottom: 8rem;
+    }
+    &__title{
+        font-size: $font-large;
+        letter-spacing: 2rem;
+        animation: slidein-left 0.5s ease-out;
+    }
+    &__tagline{
+        font-size: $font-medium;
+        animation: slidein-right 0.5s ease-out;
+    }
+    &__btn-wrapper{
+        margin-top: 5rem;
+    }
+    &__logo{
+        position:absolute;
+        height:10rem;
+        width:10rem;
+        top:2rem;
+        left:2rem;
+        height:5rem;
+        width:5rem;
+        padding:1rem;
+        overflow:hidden;
+
+        img{
+            height:100%;
+            width:100%;
+        }       
+    }
+}
+.about{
+    min-height:auto;
+    width:100%;
+    background-color: $base-theme-gray-light;
+    margin-top:-10vh;
+    padding-top:12vh;
+    text-align: center;
+    overflow: hidden;
+
+    &__wrapper{
+        height: auto;
+        width:100%;
+        display: flex;
+        
+        @include responsive(680){
+            min-height:auto;
+            flex-direction: column;
+        }
+    }
+    &__content{
+        width:50%;
+        min-height:50rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        text-align: left;
+        padding:2.5rem 3rem;
+
+        @include responsive(680){
+            height:40rem;
+            width:100%;
+        }
+               
+        &-container{
+
+            p,a{
+                margin:2rem;
+                font-size: 1.45rem;
+                
+                &::selection{
+                    color:white;
+                    background-color: $base-theme-green-light;
+                }
+            }
+            
+        }
+    }
+    &__gallery-wrapper{
+        width:50%;
+        min-height:50rem;
+
+        @include responsive(680){
+            height:50rem;
+            width:100%;
+        }
+    }    
+}
+.gallery{
+    overflow:hidden;
+    width:100%;
+    height:100%;
+    position: relative;
+
+    &__image{
+        height:15rem;;
+        width:40%;
+        outline-offset:1.2rem;
+        position: absolute;
+        transition:transform 0.5s ease-out;
+
+        @include responsive(900){
+            width:30%;
+        }
+        
+        @include responsive(450){
+            width:40%;
+        }
+
+        &:hover{
+            transform: scale(1.1) translateY(-10px);
+            z-index: 200;
+            outline: 10px solid $base-theme-green-medium;
+        }
+    }
+    &__image1{
+        left:20%;
+        top: 10%;
+    }
+    &__image2{
+        left:35%;
+        top:25%;
+        z-index: 100;
+    }
+    &__image3{
+        left:50%;
+        top:15%;
+    }
+}
+
+.features{
+    width:100%;
+    min-height:100vh;
+   
+    background-image:linear-gradient(to right, rgba($base-theme-green-medium, 0.8), rgba($base-theme-green-dark, 0.8)), url('../../assets/images/seefromtheoceans-hussain-aiman-FisNyq40uSk-unsplash.jpg');
+    background-size: cover;
+    margin-top:-5rem;
+    transform:skewY(-5deg);
+    display: flex;
+
+    @include center;
+    @include responsive(900){
+        min-height:auto;
+        padding:5rem;
+    }
+    &__wrapper{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        @include center;
+        transform:skewY(5deg);
+
+        @include responsive(900){
+            flex-direction: column;
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            place-items:center;
+        }
+    }
+}
+.tours{
+    height:auto;
+    width:100%;
+    background-color: $base-theme-gray-light;
+    margin-top:-5rem;
+    padding:5rem 0rem;
+    padding-top:8rem;
+    text-align: center;
+
+    &__wrapper{
+        height:100%;
+        width: 100%;
+        display: flex;
+        @include center;
+        margin-top: 5rem;
+        display: flex;
+        justify-content: space-around;
+        padding:0 5rem;
+
+        @include responsive(900){
+            padding:0 3rem;
+        }
+        @include responsive(800){
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            place-items:center;
+        }
+        @include responsive(450){
+            grid-template-columns: repeat(1,1fr);
+        }
+    }
+}
+.story{
+    width:100%;
+    background-image: linear-gradient(to right, rgba(white,0.8), rgba(white,0.8)), url('../../assets/images/jonny-gios-xMPeaguzfQk-unsplash.jpg');
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    @include center;
+    padding:2rem 0;
+}
+.user-form{
+    min-height:100vh;
+    width:100%;
+    background-image:linear-gradient(to right, $base-theme-green-light, $base-theme-green-dark);
+    display: flex;
+        
+    @include center;
+
+    @include responsive(1100){
+        min-height:auto;
+        padding:5rem 0;
+    }
+    @include responsive(900){
+        min-height: 60vh;
+    }
+
+    &__container{
+        width:75%;
+        height:40rem;
+        background-image:linear-gradient(110deg, rgba(white,0.9) 60%, transparent 40%) ,url('../../assets/images/luis-diego-aguilar-myrdfYW0N7g-unsplash.jpg');
+        background-size: cover;
+        border-radius:10px;
+        box-shadow:0px 5px 15px 5px $base-theme-green-light;
+        overflow:hidden;
+
+        @include responsive(900){
+            width:85%;
+        }
+        @include responsive(680){
+            background-image:linear-gradient(110deg, rgba(white,0.9) 100%, transparent 0%) ,url('../../assets/images/luis-diego-aguilar-myrdfYW0N7g-unsplash.jpg');
+
+        }
+    }
+    &__form-wrapper{
+        height:100%;
+        width:60%;
+        text-align: center;
+        overflow: hidden;
+
+        @include responsive(680){
+            width:100%;
+        }
+    }
+}
+
+.menu{
+    overflow: hidden;
+    &__btn{
+        height:5rem;
+        width:5rem;
+        border-radius:50%;
+        position: fixed;
+        top:2rem;
+        right:3rem;
+        background-color: white;
+        z-index:5000;
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        span{
+            height:2px;
+            width:2rem;
+            background-color: black;
+            margin:2px;
+        }
+    }
+    &__background{
+        width:5rem;
+        height:5rem;
+        position:fixed;
+        background-image: radial-gradient($base-theme-green-light, $base-theme-green-dark);
+        top:2rem;
+        right:3rem;
+        z-index:900;
+        border-radius:50%;
+        transition:all 0.2s ease;
+
+    }
+    &__ul{
+        position:fixed;
+        display: flex;
+        flex-direction: column;
+        @include center;
+        top:0;
+        right:0;
+        height:100%;
+        z-index:4000;
+        font-size: 3.5rem;
+        color:white;
+        cursor: pointer;
+        visibility: hidden;
+    }
+    &__checkbox{
+        display: none;
+
+        &:checked + .menu__background{
+            width:100%;
+            height:100vh;
+            right:0;
+            top:0;
+            transform:scale(8);
+        }
+        &:checked ~ .menu__ul{
+            width:100%;
+            visibility: visible;
+        }
+    }
+}
+
+.footer{
+    width:100%;
+    background-color: rgb(39, 38, 38);
+    padding:0 5rem;
+    height:auto;
+
+    @include responsive(680){        
+        padding:0 3rem;
+    }
+    @include responsive(450){        
+        padding:0 1.5rem;
+    }
+
+    &__logo{
+        height:15rem;
+        width:100%;
+    }
+    &__content{
+        width:100%;
+        height:auto;
+        padding:8rem 0;
+        font-size: 1.5rem;
+        color:white;
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap:1rem;
+
+        @include responsive(900){
+            grid-template-columns: repeat(1,1fr);
+            padding:8rem 5rem;
+        }
+        &-1{
+            display: flex;
+            justify-content: center;
+        }
+        &-ul{
+            display: flex;
+            border-top:1px solid white;
+            padding:1rem 0;
+            li{
+                margin:0 1rem;
+                cursor: pointer;
+            }
+        }
+        &-2{
+            padding:1rem 0;
+            border-top:1px solid white;
+            align-self:baseline;
+
+            @include responsive(900){
+                margin-top: 3rem;
+                text-align:center;
+            }
+        }
+    }
+}

@@ -1,0 +1,17 @@
+{
+  "name": "destinations",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "buildsass": "sass ./sass/styles.scss ./css/style.css",
+    "watch-sass": "sass --watch ./sass/styles.scss:./css/style.css",
+    "prefix-sass":"postcss --use autoprefixer -b 'last 5 versions' ./css/style.css -o ./css/style.pre.css"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "autoprefixer": "^10.4.20",
+    "postcss-cli": "^11.0.0"
+  }
+}
