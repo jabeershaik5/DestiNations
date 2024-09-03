@@ -5,7 +5,8 @@
   "scripts": {
     "buildsass": "sass ./sass/styles.scss ./css/style.css",
     "watch-sass": "sass --watch ./sass/styles.scss:./css/style.css",
-    "prefix-sass":"postcss --use autoprefixer -b 'last 5 versions' ./css/style.css -o ./css/style.pre.css"
+    "prefix-sass":"postcss --use autoprefixer -b 'last 10 versions' ./css/style.css -o ./css/style.prefix.css",
+    "minify-sass":"sass ./css/style.prefix.css ./css/style.min.css"
   },
   "author": "",
   "license": "ISC",
