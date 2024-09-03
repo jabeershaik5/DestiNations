@@ -214,13 +214,13 @@ body {
 }
 .card-v2__front-image-1 {
   background-position: left;
-  background-image: linear-gradient(to left, rgb(20, 130, 241), rgb(42, 97, 237) 80%), url("../../assets/images/henri-picot--X5FNFdq7Uw-unsplash.jpg");
+  background-image: linear-gradient(to left, rgb(20, 130, 241), rgb(42, 97, 237) 80%), url("../assets/images/henri-picot--X5FNFdq7Uw-unsplash.jpg");
 }
 .card-v2__front-image-2 {
-  background-image: linear-gradient(to left, rgb(236, 149, 18), rgb(240, 157, 4) 80%), url("../../assets/images/artists-eyes--DqzENPYLSE-unsplash.jpg");
+  background-image: linear-gradient(to left, rgb(236, 149, 18), rgb(240, 157, 4) 80%), url("../assets/images/artists-eyes--DqzENPYLSE-unsplash.jpg");
 }
 .card-v2__front-image-3 {
-  background-image: linear-gradient(to left, rgb(201, 34, 234), rgb(185, 64, 233) 80%), url("../../assets/images/dylan-sauerwein-jCGIouCoYVg-unsplash.jpg");
+  background-image: linear-gradient(to left, rgb(201, 34, 234), rgb(185, 64, 233) 80%), url("../assets/images/dylan-sauerwein-jCGIouCoYVg-unsplash.jpg");
 }
 .card-v2__front .card-v2__front-details {
   padding: 2rem 2.5rem;
